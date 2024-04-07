@@ -2,9 +2,8 @@
  * Fonte Roboto do "Google Fonts".
  * Referências: https://fonts.google.com/
  **/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Spice&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ruslan+Display&display=swap');
 
 /**
   * Font Awesome → Ícones e Glyphicons. 
@@ -188,4 +187,12 @@ height: 100%;
     color: orange;
   border-bottom: 2px solid orangered;
   padding: 5px;
+}
+.recado{
+    font-family: "Playfair Display", serif;
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: orangered;
 }
