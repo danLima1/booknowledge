@@ -113,8 +113,6 @@ button {
     border: none;
     outline: 0;
     padding: 10px;
-   
-
 }
 
 .lupa button i {
@@ -123,7 +121,7 @@ button {
 
 .lupa input {
     width: 87%;
-    border-right: 1px solid rgb(117, 116, 116);
+    
 }
 
 .lupa button {
