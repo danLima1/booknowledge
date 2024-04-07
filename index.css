@@ -95,6 +95,10 @@ table {
 
 h1 {
     text-align: center;
+   
+}
+h1 img{
+    
 }
 .lupa{
     text-align: center;
@@ -127,7 +131,7 @@ h1 img {
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 450px
+    width: 420px
 }
 
 td:hover {
