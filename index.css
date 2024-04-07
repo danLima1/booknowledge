@@ -97,9 +97,7 @@ h1 {
     text-align: center;
    
 }
-h1 img{
-    
-}
+
 .lupa{
     text-align: center;
     margin-bottom: 15px;
@@ -110,7 +108,7 @@ h1 img{
 .lupa input, button{
     display: inline-block;
     border: none;
-    border: 1px solid  #ccc9c9;
+   
     outline: 0;
     padding: 10px;
     border-radius: 3px;
