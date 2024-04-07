@@ -200,3 +200,14 @@ height: 100%;
     margin-bottom: 15px;
     color: orangered;
 }
+
+@media screen and (max-width: 768px) {
+    
+    .wrap {
+        padding: 0 10px; 
+    }
+
+    .pesq input {
+        width: 70%; 
+    }
+}
