@@ -103,13 +103,13 @@ h1 img{
 .lupa{
     text-align: center;
     margin-bottom: 15px;
- 
+    border: 1px solid #afafaf;
     
 }
 
 .lupa input, button{
     display: inline-block;
-    border: medium none;
+    border: none;
     border: 1px solid  #ccc9c9;
     outline: 0;
     padding: 10px;
