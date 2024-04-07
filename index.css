@@ -111,7 +111,6 @@ h1 {
 button {
     display: inline-block;
     border: none;
-
     outline: 0;
     padding: 10px;
     border-radius: 3px;
@@ -124,6 +123,7 @@ button {
 
 .lupa input {
     width: 87%;
+    border-right: 1px solid rgb(117, 116, 116);
 }
 
 .lupa button {
