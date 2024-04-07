@@ -169,3 +169,23 @@ td {
 .title{
     text-decoration: underline;
 }
+.photo img{
+width: 100%;
+height: 100%;
+}
+.recentes{
+    margin: 0;
+    border: none;
+}
+
+.card-recentes td{
+  padding: 0;
+  padding-right: 10px;
+ 
+}
+.prec{
+    width: 100%;
+    color: orange;
+  border-bottom: 2px solid orangered;
+  padding: 5px;
+}
