@@ -246,6 +246,7 @@ td {
         padding-bottom: 10px;
         border-radius: 0;
         border: none;
+        margin: 0;
     }
 
     .navbar span i {
@@ -280,5 +281,6 @@ td {
     input {
         border-radius: 0;
         border: none;
+    
     }
 }
