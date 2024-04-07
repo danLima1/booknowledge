@@ -2,9 +2,8 @@
  * Fonte Roboto do "Google Fonts".
  * Referências: https://fonts.google.com/
  **/
- @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Spice&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Spice&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /**
   * Font Awesome → Ícones e Glyphicons. 
   * Referências: https://fontawesome.com/
@@ -26,16 +25,18 @@
 * {
     box-sizing: border-box;
 }
- .wrap {
-     display: flex;
-     flex-direction: column;
-     height: 100%;
-     margin: auto;
-     position: relative;
-     width: 100%;
-     /* Largura maxima do conteúdo da página. */
-     max-width: 1054px;
- }
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    /* Largura maxima do conteúdo da página. */
+    max-width: 1054px;
+}
+
 body {
     margin: 0;
     font-size: 17px;
@@ -51,7 +52,8 @@ body {
 }
 
 .pesq a {
-font-size: 17px;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif;
     color: #fafafa;
     text-decoration: none;
     background: #49afd0;
@@ -95,39 +97,45 @@ table {
 
 h1 {
     text-align: center;
-   
+
 }
 
-.lupa{
+.lupa {
     text-align: center;
     margin-bottom: 15px;
     border: 1px solid #afafaf;
-    
+
 }
 
-.lupa input, button{
+.lupa input,
+button {
     display: inline-block;
     border: none;
-   
+
     outline: 0;
     padding: 10px;
     border-radius: 3px;
-    
+
 }
- .lupa button i{
+
+.lupa button i {
     display: none;
-} 
-.lupa input{
+}
+
+.lupa input {
     width: 87%;
 }
-.lupa button{
+
+.lupa button {
     cursor: pointer;
     width: 13%;
 }
+
 .lupa input:hover,
-.lupa:hover{
+.lupa:hover {
     box-shadow: 0 0 10px rgba(73, 175, 208, 0.7);
 }
+
 h1 img {
     text-align: center;
     justify-content: center;
@@ -164,36 +172,41 @@ td {
     justify-content: space-between;
 }
 
-.navbar i{
+.navbar i {
     display: flex;
     float: right;
     margin: 15px;
-  
+
 }
-.title{
+
+.title {
     text-decoration: underline;
 }
-.photo img{
-width: 100%;
-height: 100%;
+
+.photo img {
+    width: 100%;
+    height: 100%;
 }
-.recentes{
+
+.recentes {
     margin: 0;
     border: none;
 }
 
-.card-recentes td{
-  padding: 0;
-  padding-right: 10px;
- 
+.card-recentes td {
+    padding: 0;
+    padding-right: 10px;
+
 }
-.prec{
+
+.prec {
     width: 100%;
     color: orange;
-  border-bottom: 2px solid orangered;
-  padding: 5px;
+    border-bottom: 2px solid orangered;
+    padding: 5px;
 }
-.recado{
+
+.recado {
     font-family: "Cormorant Garamond", serif;
     align-items: center;
     text-align: center;
@@ -203,57 +216,69 @@ height: 100%;
 }
 
 @media screen and (max-width: 768px) {
-    
+
     .wrap {
-        padding: 0 10px; 
+        padding: 0 10px;
     }
 
     .pesq input {
-        width: 70%; 
+        width: 70%;
     }
-    .lupa button span{
+
+    .lupa button span {
         display: none;
-    } 
-    .lupa button i{
+    }
+
+    .lupa button i {
         display: block;
     }
-    .recado{
+
+    .recado {
         font-size: 14px;
     }
- 
+
 }
-@media screen and (max-width: 414px){
-    button{
-    padding: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 0;
-    border: none;
+
+@media screen and (max-width: 414px) {
+    button {
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 0;
+        border: none;
     }
-    .navbar span i{
+
+    .navbar span i {
         display: flex;
     }
+
     .navbar i {
         display: none;
     }
-   .navbar a i  {
+
+    .navbar a i {
         display: none;
     }
-    .recado{
+
+    .recado {
         font-size: 14px;
     }
-    .lupa{
+
+    .lupa {
         border-radius: 5px;
-        
+
     }
-    .lupa button span{
+
+    .lupa button span {
         display: none;
-    } 
-    .lupa button i{
+    }
+
+    .lupa button i {
         display: block;
     }
-input{
-    border-radius: 0;
-    border: none;
-}
+
+    input {
+        border-radius: 0;
+        border: none;
+    }
 }
