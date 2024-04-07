@@ -3,7 +3,7 @@
  * Referências: https://fonts.google.com/
  **/
  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Spice&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
+ @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 /**
   * Font Awesome → Ícones e Glyphicons. 
@@ -196,10 +196,10 @@ height: 100%;
   padding: 5px;
 }
 .recado{
-    font-family: "Anton", sans-serif;
+    font-family: "Cormorant Garamond", serif;
     align-items: center;
     text-align: center;
-    font-size: 12px;
+    font-size: 17px;
     margin-bottom: 15px;
     color: orangered;
 }
