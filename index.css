@@ -116,6 +116,9 @@ h1 img{
     border-radius: 3px;
     
 }
+ .lupa button i{
+    display: none;
+} 
 .lupa input{
     width: 87%;
 }
@@ -210,6 +213,12 @@ height: 100%;
     .pesq input {
         width: 70%; 
     }
+    .lupa button span{
+        display: none;
+    } 
+    .lupa button i{
+        display: block;
+    }
 
  
 }
@@ -224,6 +233,12 @@ height: 100%;
     .lupa{
         border-radius: 5px;
         
+    }
+    .lupa button span{
+        display: none;
+    } 
+    .lupa button i{
+        display: block;
     }
 input{
     border-radius: 0;
