@@ -222,8 +222,8 @@ height: 100%;
     border: none;
     }
     .lupa{
-        border-radius: 0;
-        border: none;
+        border-radius: 5px;
+        
     }
 input{
     border-radius: 0;
