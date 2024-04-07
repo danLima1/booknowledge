@@ -219,7 +219,9 @@ height: 100%;
     .lupa button i{
         display: block;
     }
-
+    .recado{
+        font-size: 14px;
+    }
  
 }
 @media screen and (max-width: 414px){
@@ -229,6 +231,9 @@ height: 100%;
     padding-bottom: 10px;
     border-radius: 0;
     border: none;
+    }
+    .recado{
+        font-size: 14px;
     }
     .lupa{
         border-radius: 5px;
