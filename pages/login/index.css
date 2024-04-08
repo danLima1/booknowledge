@@ -3,65 +3,87 @@
     box-sizing: border-box;
 }
 
-body, html {
+
+.pesq li a{
+    display: none;
+}
+article {
     height: 100%;
-  
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-   background-image: url(/testeee/src/colecao-de-rabiscos-de-hadrawn-sobre-ideias-pensamento-e-conhecimento_125540-1899.avif);
-}
+ }
 
+ body {
+    background-attachment: fixed;
+
+    background-image: url('/testeee/src/colecao-de-rabiscos-de-hadrawn-sobre-ideias-pensamento-e-conhecimento_125540-1899.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container {
-    width: 300px;
+    margin-top: 250px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.login-form {
-    background-image: url(/testeee/src/colecao-de-rabiscos-de-hadrawn-sobre-ideias-pensamento-e-conhecimento_125540-1899.avif);
-    width: 100%;
+.card {
+    padding-bottom: 150px;
+    background-color: #fff;
     padding: 20px;
+    border: 2px solid black;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 400px;
+    text-align: center;
+}
+h1{
+    font-family: "Anton", sans-serif;
+}
+h1 u{
+    font-family: "Anton", sans-serif;
+    color: orangered;
+    text-decoration: none;
+}
+h2 {
+    
+    margin-bottom: 20px;
 }
 
-.form-group {
-    margin-bottom: 15px;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: block;
+    font-family: "Playfair Display", serif;
     margin-bottom: 5px;
+    font-size: 20px;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #507af8;
+    border-bottom: 3px solid #507af8;
 }
 
 button {
-    width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #0056b3;
-}
-.pesq li a {
-    display: none;
-}
-/* Mídia para dispositivos menores */
-@media (max-width: 480px) {
-    .container {
-        width: 90%;
-    }
 }
