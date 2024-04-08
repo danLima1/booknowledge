@@ -38,6 +38,15 @@ return false
 
 }
 
+function loadpage(page, updateURL = true){
+  const path = {
+    html: `pages/${page}/index.html`,
+    css: `pages/${page}/index.css`,
+    js: `pages/${page}/index.js`
+  }
+
+}
+
 
 
 
