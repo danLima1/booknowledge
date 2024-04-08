@@ -25,7 +25,18 @@
 * {
     box-sizing: border-box;
 }
+.categoria{
+    text-decoration: none;
 
+}
+h3{
+    border-bottom: 1px dashed;
+    color: #777;
+    font-size: 19px;
+    cursor: pointer;
+    line-height: 1.2;
+    width: 10%;
+}
 .wrap {
     display: flex;
     flex-direction: column;
@@ -151,7 +162,7 @@ td {
     width: 1053px;
     padding: 16px;
     margin: 0;
-    border-bottom: 1px solid #ddd;
+   
 }
 
 
