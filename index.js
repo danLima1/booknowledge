@@ -28,7 +28,7 @@ function myApp() {
 
 
  
-  };
+  
 
   /**
    * IMPORTANTE!
