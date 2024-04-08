@@ -37,13 +37,13 @@ height: auto;
         align-items: center; /* Novo */
     }
     .card img {
-        width: 100%; /* Alterado */
+        width: 300px; /* Alterado */
         max-width: 300px; /* Novo */
     }
 }
 
 @media only screen and (max-width: 320px) {
     .card img {
-        max-width: 200px; /* Novo */
+        max-width: 400px; /* Novo */
     }
 }
