@@ -9,8 +9,9 @@
 }
 
 .card img {
-    width: 350px;
+    width: 550px;
 padding: 15px;
+height: auto;
 }
 
 .card-content {
