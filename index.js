@@ -45,6 +45,28 @@ function loadpage(page, updateURL = true){
     js: `pages/${page}/index.js`
   }
 
+  $.get(path.html)
+
+  .done((data) => {
+    if(data.trim().substring(0, 9) != 'article')
+ loadpage('404', false)
+    else{
+      $('#pageCSS').attr('href', path.css)
+
+      $('main').html(data)
+
+      $.getScript(path.js)
+    }
+  } )
+
+.catch(()=>{
+loadpage('e404', false)
+
+})
+  
+if(updateURL) window.history.pushState({}, '', page)
+
+
 }
 
 
