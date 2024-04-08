@@ -25,30 +25,10 @@ $(document).ready(myApp)
 **/
 function myApp() {
 
-  onstorage = popUpOpen
 
-  // Aviso de cookies → Exibir aviso.
-  if (cookie.get('acceptCookies') == 'on') $('#aboutCookies').hide()
-  else $('#aboutCookies').show()
 
-  // Monitora status de autenticação do usuário
-  firebase.auth().onAuthStateChanged((user) => {
-
-      // Se o usuário está logado...
-      if (user) {
-
-          // Mostra a imagem do usuário e o link de perfil.
-          $('#navUser').html(`<img src="${user.photoURL}" alt="${user.displayName}" referrerpolicy="no-referrer"><span>Perfil</span>`)
-          $('#navUser').attr('href', 'profile')
-
-          // Se não tem logados...
-      } else {
-
-          // Mostra o ícone de usuário e o link de login.
-          $('#navUser').html(`<i class="fa-solid fa-user fa-fw"></i><span>Login</span>`)
-          $('#navUser').attr('href', 'login')
-      }
-  });
+ 
+  };
 
   /**
    * IMPORTANTE!
@@ -100,21 +80,7 @@ function myApp() {
 
 }
 
-// Faz login do usuário usando o Firebase Authentication
-function fbLogin() {
-  firebase.auth().signInWithPopup(provider)
-      .then((user) => {
-          popUp({ type: 'success', text: `Olá ${user.user.displayName}!` })
-          loadpage(location.pathname.split('/')[2])
-      })
-      .catch((error) => {
-          try {
-              popUp({ type: 'error', text: 'Ooops! Popups estão bloqueados!<br>Por favor, libere-os!' })
-          } catch (e) {
-              alert('Ooops! Popups estão bloqueados!\nPor favor, libere-os!')
-          }
-      })
-}
+
 
 /**
 * Função que processa o clique em um link.
