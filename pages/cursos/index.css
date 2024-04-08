@@ -5,7 +5,7 @@
     overflow: hidden;
     width: 100%; /* Alterado */
     max-width: 100%; /* Novo */
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .card img {
@@ -21,6 +21,7 @@ height: auto;
 .card-content h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: black;
 }
 
 .card-content p {
@@ -29,7 +30,12 @@ height: auto;
     width: 100%; /* Alterado */
     margin-left: 20px;
 }
-
+.card-content a{
+    text-decoration: none;
+}
+.title-c:hover{
+color: orangered;
+}
 /* Media queries */
 @media only screen and (max-width: 768px) {
     .card {
