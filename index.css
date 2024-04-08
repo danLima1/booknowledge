@@ -51,7 +51,7 @@ body {
 
 }
 
-.pesq a {
+ a.green, a.blue {
     font-size: 17px;
     font-family: "Roboto", sans-serif;
     color: #fafafa;
@@ -61,7 +61,9 @@ body {
     margin: 0%;
 
 }
-
+a.blue{
+    background: #49afd0;
+}
 .pesq li {
     list-style: none;
     float: left;
@@ -212,6 +214,31 @@ td {
     margin-bottom: 15px;
     color: orangered;
 }
+
+
+
+
+h1{
+    text-align: center;
+}
+h1 img{
+    width: 320px;
+    
+}
+.pesq{
+    width: 100%;
+    display: flex;
+   
+}
+.pesq input{
+    padding: 7px;
+    width: 87%;
+}
+.pesq button{
+    width: 13%;
+    padding: 7px;
+}
+
 
 @media screen and (max-width: 768px) {
 

@@ -1,0 +1,37 @@
+.card {
+    background-color: #f1f1f1;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+   
+    width: 100%;
+    margin: 10px auto;
+}
+.curso-a img{
+ 
+    width: 350px;
+}
+.curso img{
+    width: 350px;
+ padding: 20px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #666;
+    width: 400px;
+    margin-left: 20px;
+}
+.card a {
+    color: black;
+    text-decoration: none;
+}
