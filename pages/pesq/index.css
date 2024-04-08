@@ -1,19 +1,16 @@
 .card {
-    background-color: #f1f1f1;
     display: flex;
-    border: 1px solid #ccc;
+    border: 1px solid #cacaca;
     border-radius: 8px;
-   
-    width: 100%;
-    margin: 10px auto;
+    overflow: hidden;
+    width: 100%; /* Alterado */
+    max-width: 100%; /* Novo */
+    margin: 20px auto;
 }
-.curso-a img{
- 
+
+.card img {
     width: 350px;
-}
-.curso img{
-    width: 350px;
- padding: 20px;
+padding: 15px;
 }
 
 .card-content {
@@ -28,10 +25,24 @@
 .card-content p {
     font-size: 1rem;
     color: #666;
-    width: 400px;
+    width: 100%; /* Alterado */
     margin-left: 20px;
 }
-.card a {
-    color: black;
-    text-decoration: none;
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+    .card {
+        flex-direction: column; /* Alterado */
+        align-items: center; /* Novo */
+    }
+    .card img {
+        width: 100%; /* Alterado */
+        max-width: 300px; /* Novo */
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .card img {
+        max-width: 200px; /* Novo */
+    }
 }
