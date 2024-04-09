@@ -93,7 +93,7 @@ function loadpage(page, updateURL = true) {
   window.scrollTo(0, 0);
 
   // Atualiza URL da página com o endereço da rota.
-  if (updateURL) window.history.pushState({}, '', page);
+  if (updateURL) window.history.pushState({home}, '', page);
 
 }
 
