@@ -5,7 +5,7 @@
  * MIT License 2023 
  **/
 //esse codigo foi usado para fazer uma aplicaçõa spa, especificamente para fazer o roteamento de paginas. fucio[n (){
-    decodeURI(strongthehtmlMinLenghtUpperCase)
+  
 // Chama aplicativo principal.
 $(document).ready(myApp)
 
