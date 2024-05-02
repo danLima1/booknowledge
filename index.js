@@ -4,8 +4,8 @@
  * By Luferat
  * MIT License 2023 
  **/
-
-
+//esse codigo foi usado para fazer uma aplicaçõa spa, especificamente para fazer o roteamento de paginas. fucio[n (){
+    decodeURI(strongthehtmlMinLenghtUpperCase)
 // Chama aplicativo principal.
 $(document).ready(myApp)
 
@@ -94,7 +94,7 @@ function loadpage(page, updateURL = true) {
 
   // Atualiza URL da página com o endereço da rota.
   if (updateURL) window.history.pushState({home}, '', page);
-
+  home
 }
 
 // Muda o título da página → <title></title>
