@@ -120,7 +120,7 @@
  
  }
  
- .lupa input[type="search"],
+ #search-input,
  button {
      display: inline-block;
      border: none;
@@ -132,7 +132,7 @@
      display: none;
  }
  
- .lupa input[type="search"] {
+ #search-input {
      width: 87%;
      
  }
@@ -142,7 +142,7 @@
      width: 13%;
  }
  
- .lupa input[type="search"]:hover,
+ #search-input:hover,
  .lupa:hover {
      box-shadow: 0 0 10px rgba(73, 175, 208, 0.7);
  }
