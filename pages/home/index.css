@@ -2,7 +2,6 @@
     text-align: center;
     margin-bottom: 15px;
     border: 1px solid #afafaf;
-    padding: 5px; /* Adicionado para evitar que os elementos fiquem colados na borda */
 }
 
 #search-input,
@@ -18,14 +17,13 @@ button {
     display: none;
 }
 
-#search-input {
-    width: 80%; /* Ajustado para se alinhar melhor com o botão */
-    margin-right: -4px; /* Remove o espaço entre o input e o botão */
+#search-input{
+    width: 86%;
 }
 
 .lupa button {
     cursor: pointer;
-    width: 20%; /* Ajustado para se alinhar melhor com o input */
+    width: 13%; /* Ajustado para se alinhar melhor com o input */
     background-color: #007BFF; /* Cor do botão */
     color: #fff; /* Cor do texto do botão */
     border-radius: 0 4px 4px 0; /* Bordas arredondadas para a direita */
