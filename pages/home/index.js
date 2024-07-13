@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     function fetchBooks() {
         var query = $('#search-input').val();
-        var url = 'http://localhost:5000/search?query=' + query; 
+        var url = 'https://api-booknowledge.onrender.com/search?query=' + query; 
         console.log('Fetching books with query:', query);  
 
         $.ajax({
