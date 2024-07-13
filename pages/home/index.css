@@ -45,7 +45,7 @@ h1 {
     display: flex;
     flex-wrap: wrap; /* Permite que os itens quebram em novas linhas */
     justify-content: space-around; /* Distribui os itens uniformemente */
-    gap: 2px; /* Espaçamento entre os itens */
+    
 }
 
 .photo {
