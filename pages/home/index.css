@@ -158,24 +158,7 @@ button {
     }
 }
  @media screen and (max-width: 414px) {
-    #books-container {
-        flex-wrap: wrap; /* Permite que os itens quebrem em novas linhas */
-    }
 
-    .photo {
-        width: calc(33.33% - 20px); /* Calcula a largura para 3 itens por linha, com margens */
-        margin: 10px; /* Espaçamento entre os itens */
-    }
-}
-
-    .photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 10px;
-        border-radius: 5px; /* Adiciona bordas arredondadas se desejar */
-    }
 
      button {
          padding: 0;
@@ -220,4 +203,4 @@ button {
          border: none;
      
      }
- 
+    }
