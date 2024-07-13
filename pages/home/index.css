@@ -40,3 +40,56 @@ button {
     font-size: 24px;
     color: red;
 }
+
+
+@media screen and (max-width: 768px) {
+ 
+    .wrap {
+        padding: 0 10px;
+    }
+
+    .lupa button span {
+        display: none;
+    }
+
+    .lupa button i {
+        display: block;
+    }
+
+    .recado {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+    button {
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 0;
+        border: none;
+        margin: 0;
+    }
+    #search-input{
+        width: 83%;
+    }
+    .lupa {
+        border-radius: 5px;
+
+    }
+
+    .lupa button span {
+        display: none;
+    }
+
+    .lupa button i {
+        display: block;
+    }
+
+    #search-input {
+        border-radius: 0;
+        border: none;
+    
+    }
+}
