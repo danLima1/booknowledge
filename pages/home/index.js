@@ -71,8 +71,7 @@ $(document).ready(function() {
                             '<div class="photo">' +
                                 '<a href="' + book.url + '" class="title">' +
                                     '<img src="' + book.image + '" alt="' + book.title + '">' +
-                                '</a>' +
-                                '<span class="title-text">' + book.title + '</span>' +
+                                '</a>' 
                             '</div>';
                         booksContainer.append(row);
                     });

@@ -45,7 +45,7 @@ h1 {
     display: flex;
     flex-wrap: wrap; /* Permite que os itens quebram em novas linhas */
     justify-content: space-around; /* Distribui os itens uniformemente */
-    gap: 20px; /* Espaçamento entre os itens */
+    gap: 2px; /* Espaçamento entre os itens */
 }
 
 .photo {
@@ -59,6 +59,7 @@ h1 {
 .photo img {
     max-width: 100%;
     height: auto;
+    object-fit: cover; /* Escala a imagem para cobrir todo o espaço disponível */
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
 }
@@ -137,7 +138,7 @@ button {
 
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 619px) {
     button {
         padding: 0;
         padding-top: 10px;
