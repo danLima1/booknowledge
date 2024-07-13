@@ -1,0 +1,33 @@
+.lupa {
+    text-align: center;
+    margin-bottom: 15px;
+    border: 1px solid #afafaf;
+
+}
+
+.lupa input,
+button {
+    display: inline-block;
+    border: none;
+    outline: 0;
+    padding: 10px;
+}
+
+.lupa button i {
+    display: none;
+}
+
+.lupa input {
+    width: 87%;
+
+}
+
+.lupa button {
+    cursor: pointer;
+    width: 13%;
+}
+
+.lupa input:hover,
+.lupa:hover {
+    box-shadow: 0 0 10px rgba(73, 175, 208, 0.7);
+}
