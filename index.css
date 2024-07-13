@@ -1,11 +1,35 @@
-* {
-    box-sizing: border-box;
-}
-.categoria{
-    text-decoration: none;
-
-}
-h3{
+/**
+ * Fonte Roboto do "Google Fonts".
+ * Referências: https://fonts.google.com/
+ **/
+ @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Spice&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ /**
+   * Font Awesome → Ícones e Glyphicons. 
+   * Referências: https://fontawesome.com/
+   **/
+ @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+ 
+ /**
+   * Normalize → CSS que padroniza a view entre diversos navegadores.
+   * Referências: 
+   *  • https://github.com/necolas/normalize.css
+   *  • https://necolas.github.io/normalize.css/
+   **/
+ @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+ 
+ /**********************************************/
+ /* Configuração inicial do CSS do aplicativo. */
+ /**********************************************/
+ 
+ * {
+     box-sizing: border-box;
+ }
+ .categoria{
+     text-decoration: none;
+ 
+ }
+ h3{
     border-bottom: 1px dashed;
     color: #777;
     font-size: 17px;
@@ -13,286 +37,257 @@ h3{
     line-height: 1.2;
     width: 10%;
 }
-.wrap {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: auto;
-    position: relative;
-    width: 100%;
-    /* Largura maxima do conteúdo da página. */
-    max-width: 1054px;
-}
+ .wrap {
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     margin: auto;
+     position: relative;
+     width: 100%;
+     /* Largura maxima do conteúdo da página. */
+     max-width: 1054px;
+ }
+ 
+ body {
+     margin: 0;
+     font-size: 17px;
+     background-color: #f6f6f6;
+ }
+ 
+ .pesq {
+     width: 85%;
+     margin: 0;
+     display: flex;
+     margin-left: 13px;
+ 
+ }
+ 
+  a.green, a.blue {
+     font-size: 17px;
+     font-family: "Roboto", sans-serif;
+     color: #fafafa;
+     text-decoration: none;
+     background: #49afd0;
+     padding: 10px;
+     margin: 0%;
+ 
+ }
+ a.blue{
+     background: #49afd0;
+ }
+ .pesq li {
+     list-style: none;
+     float: left;
+     margin: 0 5px;
+ }
+ 
+ td a {
+     color: black;
+     text-decoration: none;
+ 
+ }
+ 
+ a.green {
+     background: #8ecd51;
+     ;
+ }
+ 
+ 
+ 
+ tr img {
+     width: 100px;
+     height: 100%;
+ }
+ 
+ table {
+     display: block;
+     margin: auto;
+     max-width: 1054px;
+     border: 1px solid #afafaf;
+     background-color: #ffffff;
+ 
+ }
+ 
+ h1 {
+     text-align: center;
+ 
+ }
+ 
 
-body {
-    margin: 0;
-    font-size: 17px;
-    background-color: #f6f6f6;
-}
-
-.pesq {
-    width: 85%;
-    margin: 0;
-    display: flex;
-    margin-left: 13px;
-
-}
-
- a.green, a.blue {
-    font-size: 17px;
-    font-family: "Roboto", sans-serif;
-    color: #fafafa;
-    text-decoration: none;
-    background: #49afd0;
-    padding: 10px;
-    margin: 0%;
-
-}
-a.blue{
-    background: #49afd0;
-}
-.pesq li {
-    list-style: none;
-    float: left;
-    margin: 0 5px;
-}
-
-td a {
-    color: black;
-    text-decoration: none;
-
-}
-
-a.green {
-    background: #8ecd51;
-    ;
-}
-
-
-
-tr img {
-    width: 100px;
-    height: 100%;
-}
-
-table {
-    display: block;
-    margin: auto;
-    max-width: 1054px;
-    border: 1px solid #afafaf;
-    background-color: #ffffff;
-
-}
-
-h1 {
-    text-align: center;
-
-}
-
-.lupa {
-    text-align: center;
-    margin-bottom: 15px;
-    border: 1px solid #afafaf;
-
-}
-
-.lupa input,
-button {
-    display: inline-block;
-    border: none;
-    outline: 0;
-    padding: 10px;
-}
-
-.lupa button i {
+.title-text
+{
     display: none;
 }
-
-.lupa input {
-    width: 87%;
-
-}
-
-.lupa button {
-    cursor: pointer;
-    width: 13%;
-}
-
-.lupa input:hover,
-.lupa:hover {
-    box-shadow: 0 0 10px rgba(73, 175, 208, 0.7);
-}
-
-h1 img {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 320px
-}
-
-td:hover {
-    box-shadow: 0 0 10px rgba(73, 175, 208, 0.7);
-}
-
-td {
-    width: 1053px;
-    padding: 16px;
-    margin: 0;
-    border-bottom: 1px solid #ddd;
-}
-
-
-.info {
-    display: flex;
-    list-style: none;
-
-
-}
-
-.info li {
-    margin-left: 15px;
-    font-size: 20px;
-}
-
-.donate {
-    display: flex;
-    justify-content: space-between;
-}
-
-.navbar i {
-    display: flex;
-    float: right;
-    margin: 15px;
-
-}
-
-.title {
-    text-decoration: underline;
-}
-
-.photo img {
-    width: 100%;
-    height: 100%;
-}
-
-.recentes {
-    margin: 0;
-    border: none;
-}
-
-.card-recentes td {
-    padding: 0;
-    padding-right: 10px;
-
-}
-
-.prec {
-    width: 100%;
-    color: orange;
-    border-bottom: 2px solid orangered;
-    padding: 5px;
-}
-
-.recado {
-    font-family: "Cormorant Garamond", serif;
-    align-items: center;
-    text-align: center;
-    font-size: 17px;
-    margin-bottom: 15px;
-    color: orangered;
-}
-
-
-
-
-h1{
-    text-align: center;
-}
-h1 img{
-    width: 320px;
-
-}
-.pesq{
-    width: 100%;
-    display: flex;
-
-   }
-.pesq input{
-    padding: 7px;
-    width: 87%;
-}
-.pesq button{
-    width: 13%;
-    padding: 7px;
-}
-
-
-@media screen and (max-width: 768px) {
-
-    .wrap {
-        padding: 0 10px;
-    }
-
-    .pesq input {
-        width: 70%;
-    }
-
-    .lupa button span {
-        display: none;
-    }
-
-    .lupa button i {
-        display: block;
-    }
-
-    .recado {
-        font-size: 14px;
-    }
-
-}
-
-@media screen and (max-width: 414px) {
-    button {
-        padding: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        border-radius: 0;
-        border: none;
-        margin: 0;
-    }
-
-    .navbar span i {
-        display: flex;
-    }
-
-    .navbar i {
-        display: none;
-    }
-
-    .navbar a i {
-        display: none;
-    }
-
-    .recado {
-        font-size: 14px;
-    }
-
-    .lupa {
-        border-radius: 5px;
-
-    }
-
-    .lupa button span {
-        display: none;
-    }
-
-    .lupa button i {
-        display: block;
-    }
-
-    input {
-        border-radius: 0;
-        border: none;
-
-    }
-}
+ h1 img {
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     width: 320px
+ }
+ 
+ td:hover {
+     box-shadow: 0 0 10px rgba(73, 175, 208, 0.7);
+ }
+ 
+ td {
+     width: 1053px;
+     padding: 16px;
+     margin: 0;
+     border-bottom: 1px solid #ddd;
+ }
+ 
+ 
+ .info {
+     display: flex;
+     list-style: none;
+ 
+ 
+ }
+ 
+ .info li {
+     margin-left: 15px;
+     font-size: 20px;
+ }
+ 
+ .donate {
+     display: flex;
+     justify-content: space-between;
+ }
+ 
+ .navbar i {
+     display: flex;
+     float: right;
+     margin: 15px;
+ 
+ }
+ 
+ .title {
+     text-decoration: underline;
+ }
+ 
+ .photo img {
+     width: 100%;
+     height: 100%;
+ }
+ 
+ .recentes {
+     margin: 0;
+     border: none;
+ }
+ 
+ .card-recentes  {
+     padding: 0;
+     padding-right: 10px;
+ 
+ }
+ 
+ .prec {
+     width: 100%;
+     color: orange;
+     border-bottom: 2px solid orangered;
+     padding: 5px;
+ }
+ 
+ .recado {
+     font-family: "Cormorant Garamond", serif;
+     align-items: center;
+     text-align: center;
+     font-size: 17px;
+     margin-bottom: 15px;
+     color: orangered;
+ }
+ 
+ 
+ 
+ 
+ h1{
+     text-align: center;
+ }
+ h1 img{
+     width: 320px;
+     
+ }
+ .pesq{
+     width: 100%;
+     display: flex;
+    
+ }
+ .pesq input{
+     padding: 7px;
+     width: 87%;
+ }
+ .pesq button{
+     width: 13%;
+     padding: 7px;
+ }
+ 
+ 
+ @media screen and (max-width: 768px) {
+ 
+     .wrap {
+         padding: 0 10px;
+     }
+ 
+     .pesq input {
+         width: 70%;
+     }
+ 
+     .lupa button span {
+         display: none;
+     }
+ 
+     .lupa button i {
+         display: block;
+     }
+ 
+     .recado {
+         font-size: 14px;
+     }
+ 
+ }
+ 
+ @media screen and (max-width: 414px) {
+     button {
+         padding: 0;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         border-radius: 0;
+         border: none;
+         margin: 0;
+     }
+ 
+     .navbar span i {
+         display: flex;
+     }
+ 
+     .navbar i {
+         display: none;
+     }
+ 
+     .navbar a i {
+         display: none;
+     }
+ 
+     .recado {
+         font-size: 14px;
+     }
+ 
+     .lupa {
+         border-radius: 5px;
+ 
+     }
+ 
+     .lupa button span {
+         display: none;
+     }
+ 
+     .lupa button i {
+         display: block;
+     }
+ 
+     input {
+         border-radius: 0;
+         border: none;
+     
+     }
+ }
