@@ -176,7 +176,7 @@ button {
         margin-bottom: 10px;
         border-radius: 5px; /* Adiciona bordas arredondadas se desejar */
     }
-}
+
      button {
          padding: 0;
          padding-top: 10px;
@@ -220,4 +220,4 @@ button {
          border: none;
      
      }
- }
+ 
