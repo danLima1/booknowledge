@@ -40,6 +40,32 @@ button {
     font-size: 24px;
     color: red;
 }
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+.recentes {
+    width: 100%;
+    border-collapse: collapse;
+}
+.photo {
+    padding: 10px;
+    text-align: center;
+}
+.photo img {
+    max-width: 100%;
+    height: auto;
+}
+.title-text {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.no-results {
+    display: none;
+    text-align: center;
+    color: red;
+}
 
 
 @media screen and (max-width: 768px) {
