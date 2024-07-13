@@ -51,7 +51,7 @@ $(document).ready(function() {
 
     // Função para buscar os livros recentes
     function fetchRecentBooks() {
-        var url = 'http://127.0.0.1:5000/search'; // Ajuste a URL do backend para buscar livros recentes
+        var url = 'https://api-booknowledge.onrender.com/search'; // Ajuste a URL do backend para buscar livros recentes
         console.log('Fetching recent books');
 
         $.ajax({
