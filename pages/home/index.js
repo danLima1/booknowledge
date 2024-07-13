@@ -6,11 +6,13 @@ $(document).ready(function() {
     function fetchBooks() {
         var query = $('#search-input').val();
         var url = `http://localhost:5000/search?query=${query}`;
+        console.log(`Fetching books with query: ${query}`);  // Log de depuração
 
         $.ajax({
             url: url,
             method: 'GET',
             success: function(data) {
+                console.log('Data received:', data);  // Log de depuração
                 var booksContainer = $('#books-container');
                 booksContainer.empty();
 
