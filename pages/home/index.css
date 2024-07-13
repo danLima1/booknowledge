@@ -33,3 +33,10 @@ button {
 .lupa:hover {
     box-shadow: 0 0 10px rgba(73, 175, 208, 0.7);
 }
+.no-results {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: red;
+}
