@@ -158,11 +158,15 @@ button {
     }
 }
  @media screen and (max-width: 414px) {
-    .photo {
-        width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
-        max-width: none; /* Remove a largura máxima para telas menores */
-        padding: 0; /* Remove o padding para evitar espaços extras */
+    #books-container {
+        flex-wrap: wrap; /* Permite que os itens quebrem em novas linhas */
     }
+
+    .photo {
+        width: calc(33.33% - 20px); /* Calcula a largura para 3 itens por linha, com margens */
+        margin: 10px; /* Espaçamento entre os itens */
+    }
+}
 
     .photo img {
         width: 100%;
