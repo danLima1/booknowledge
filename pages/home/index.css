@@ -1,3 +1,77 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.recentes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.recado {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+
+.categoria {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.categoria h3 {
+    color: #333;
+    text-decoration: none;
+}
+.prec {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.card-recentes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.photo {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+}
+.photo img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.title-text {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.no-results {
+    display: none;
+    text-align: center;
+    color: red;
+}
+
 .lupa {
     text-align: center;
     margin-bottom: 15px;
@@ -32,39 +106,6 @@ button {
 #search-input:hover,
 .lupa:hover {
     box-shadow: 0 0 10px rgba(73, 175, 208, 0.7);
-}
-.no-results {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 24px;
-    color: red;
-}
-.wrap {
-    width: 100%;
-    margin: 0 auto;
-}
-.recentes {
-    width: 100%;
-    border-collapse: collapse;
-}
-.photo {
-    padding: 10px;
-    text-align: center;
-}
-.photo img {
-    max-width: 100%;
-    height: auto;
-}
-.title-text {
-    display: block;
-    margin-top: 5px;
-    font-weight: bold;
-}
-.no-results {
-    display: none;
-    text-align: center;
-    color: red;
 }
 
 
