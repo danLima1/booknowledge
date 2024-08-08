@@ -48,29 +48,7 @@ $(document).ready(function() {
             }
         });
     }
-document.getElementById('add-book-form').addEventListener('submit', async function(event) {
-    event.preventDefault();
 
-    const title = document.getElementById('title').value;
-    const url = document.getElementById('url').value;
-    const image = document.getElementById('image').value;
-
-    const response = await fetch('http://localhost:5000/add-book', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ title, url, image }),
-    });
-
-    const result = await response.json();
-    if (response.ok) {
-        alert('Livro adicionado com sucesso!');
-        // Limpar o formulário
-        document.getElementById('add-book-form').reset();
-    } else {
-        alert(`Erro: ${result.error}`);
-    }
 });
     // Função para buscar os livros recentes
     function fetchRecentBooks() {
@@ -108,4 +86,31 @@ document.getElementById('add-book-form').addEventListener('submit', async functi
 
     // Fetch initial books on page load
     fetchRecentBooks(); // Carrega os livros recentes ao carregar a página
+  $('#add-book-form').on('submit', function(event) {
+        event.preventDefault();
+
+        var title = $('#title').val();
+        var url = $('#url').val();
+        var image = $('#image').val();
+
+        $.ajax({
+            url: 'http://localhost:5000/add-book',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                title: title,
+                url: url,
+                image: image
+            }),
+            success: function(response) {
+                alert('Livro adicionado com sucesso!');
+                $('#add-book-form')[0].reset();
+                fetchRecentBooks(); // Atualiza a lista de livros recentes
+            },
+            error: function(error) {
+                console.error('Error adding book:', error);
+                alert('Erro ao adicionar o livro. Verifique os dados e tente novamente.');
+            }
+        });
+    });
 });
