@@ -2,7 +2,6 @@ $(document).ready(function() {
     $('#search-button').on('click', function() {
         fetchBooks();
     });
-
     // Função para verificar se o campo de pesquisa está vazio
     function checkEmptySearch() {
         var query = $('#search-input').val();
@@ -10,15 +9,12 @@ $(document).ready(function() {
             fetchRecentBooks(); // Se estiver vazio, busca os livros recentes
         }
     }
-
     // Chamando a função checkEmptySearch() sempre que o campo de pesquisa for modificado
     $('#search-input').on('input', checkEmptySearch);
-
     function fetchBooks() {
         var query = $('#search-input').val();
-        var url = 'http://localhost:5000/search?query=' + query; 
+        var url = 'https://api-booknowledge.onrender.com/search?query=' + query; 
         console.log('Fetching books with query:', query);  
-
         $.ajax({
             url: url,
             method: 'GET',
@@ -26,7 +22,6 @@ $(document).ready(function() {
                 console.log('Data received:', data); 
                 var booksContainer = $('#books-container');
                 booksContainer.empty();
-
                 if (data.length === 0) {
                     $('.no-results').show();
                 } else {
@@ -48,12 +43,34 @@ $(document).ready(function() {
             }
         });
     }
+document.getElementById('add-book-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
+    const title = document.getElementById('title').value;
+    const url = document.getElementById('url').value;
+    const image = document.getElementById('image').value;
+
+    const response = await fetch('http://localhost:5000/add-book', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, url, image }),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+        alert('Livro adicionado com sucesso!');
+        // Limpar o formulário
+        document.getElementById('add-book-form').reset();
+    } else {
+        alert(`Erro: ${result.error}`);
+    }
+});
     // Função para buscar os livros recentes
     function fetchRecentBooks() {
-        var url = 'http://localhost:5000/search'; // Ajuste a URL do backend para buscar livros recentes
+        var url = 'https://api-booknowledge.onrender.com/search'; // Ajuste a URL do backend para buscar livros recentes
         console.log('Fetching recent books');
-
         $.ajax({
             url: url,
             method: 'GET',
@@ -61,7 +78,6 @@ $(document).ready(function() {
                 console.log('Recent books data received:', data);
                 var booksContainer = $('#books-container');
                 booksContainer.empty();
-
                 if (data.length === 0) {
                     $('.no-results').show();
                 } else {
@@ -85,33 +101,4 @@ $(document).ready(function() {
 
     // Fetch initial books on page load
     fetchRecentBooks(); // Carrega os livros recentes ao carregar a página
-
-    // Adicionar novo livro
-    $('#add-book-form').on('submit', function(event) {
-        event.preventDefault();
-
-        var title = $('#title').val();
-        var url = $('#url').val();
-        var image = $('#image').val();
-
-        $.ajax({
-            url: 'http://localhost:5000/add-book',
-            method: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                title: title,
-                url: url,
-                image: image
-            }),
-            success: function(response) {
-                alert('Livro adicionado com sucesso!');
-                $('#add-book-form')[0].reset();
-                fetchRecentBooks(); // Atualiza a lista de livros recentes
-            },
-            error: function(error) {
-                console.error('Error adding book:', error);
-                alert('Erro ao adicionar o livro. Verifique os dados e tente novamente.');
-            }
-        });
-    });
 });
