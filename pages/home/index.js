@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     function fetchBooks() {
         var query = $('#search-input').val();
-        var url = 'https://api-booknowledge.onrender.com/search?query=' + query; 
+        var url = 'http://localhost:5000/search?query=' + query; 
         console.log('Fetching books with query:', query);  
 
         $.ajax({
@@ -49,10 +49,9 @@ $(document).ready(function() {
         });
     }
 
-});
     // Função para buscar os livros recentes
     function fetchRecentBooks() {
-        var url = 'https://api-booknowledge.onrender.com/search'; // Ajuste a URL do backend para buscar livros recentes
+        var url = 'http://localhost:5000/search'; // Ajuste a URL do backend para buscar livros recentes
         console.log('Fetching recent books');
 
         $.ajax({
@@ -86,7 +85,9 @@ $(document).ready(function() {
 
     // Fetch initial books on page load
     fetchRecentBooks(); // Carrega os livros recentes ao carregar a página
-  $('#add-book-form').on('submit', function(event) {
+
+    // Adicionar novo livro
+    $('#add-book-form').on('submit', function(event) {
         event.preventDefault();
 
         var title = $('#title').val();
