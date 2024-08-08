@@ -48,7 +48,30 @@ $(document).ready(function() {
             }
         });
     }
+document.getElementById('add-book-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
+    const title = document.getElementById('title').value;
+    const url = document.getElementById('url').value;
+    const image = document.getElementById('image').value;
+
+    const response = await fetch('http://localhost:5000/add-book', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, url, image }),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+        alert('Livro adicionado com sucesso!');
+        // Limpar o formulário
+        document.getElementById('add-book-form').reset();
+    } else {
+        alert(`Erro: ${result.error}`);
+    }
+});
     // Função para buscar os livros recentes
     function fetchRecentBooks() {
         var url = 'https://api-booknowledge.onrender.com/search'; // Ajuste a URL do backend para buscar livros recentes
