@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     // Função para buscar os livros recentes
     function fetchRecentBooks() {
-        var url = '/search'; // Usar a rota local do Flask para buscar livros recentes
+        var url = 'https://api-booknowledge.onrender.com/search'; // Usar a rota local do Flask para buscar livros recentes
         console.log('Fetching recent books');
 
         $.ajax({
