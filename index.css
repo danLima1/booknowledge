@@ -291,3 +291,54 @@
      
      }
  }
+/* Estilos para o menu expansível em telas menores */
+.mobile-menu {
+    display: none; /* Oculto por padrão */
+    position: absolute;
+    top: 60px; /* Ajuste a posição conforme necessário */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Mostra o menu quando ativo */
+.mobile-menu.active {
+    display: block;
+}
+
+/* Estilo do botão de menu (hamburger) */
+#menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    display: none; /* Oculto em telas maiores */
+}
+
+/* Exibe o botão de menu em telas menores */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: inline-block;
+    }
+    
+    .pesq {
+        display: none; /* Oculta o menu de navegação principal em telas menores */
+    }
+}
