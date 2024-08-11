@@ -28,6 +28,10 @@ $(document).ready(function() {
             image: $('#book-image').val(),
         };
 
+        // Fechar o modal e mostrar o indicador de carregamento
+        $('#add-book-modal').hide();
+        $('#loading-indicator').show();
+
         $.ajax({
             url: apiUrl + '/add-book',
             method: 'POST',
@@ -35,12 +39,13 @@ $(document).ready(function() {
             data: JSON.stringify(newBook),
             success: function(response) {
                 alert('Livro adicionado com sucesso!');
-                $('#add-book-modal').hide();
-                fetchRecentBooks(); // Recarregar os livros para mostrar o novo livro adicionado
+                $('#loading-indicator').hide();
+                location.reload(); // Recarregar a página após adicionar o livro
             },
             error: function(error) {
                 console.error('Erro ao adicionar livro:', error);
                 alert('Erro ao adicionar livro. Verifique os dados e tente novamente.');
+                $('#loading-indicator').hide();
             }
         });
     });
