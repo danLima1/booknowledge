@@ -73,6 +73,48 @@ $(document).ready(function() {
         }
     });
 
+    // Abrir modal para adicionar livro
+    $('#add-book-button').on('click', function() {
+        $('#add-book-modal').show();
+    });
+
+    // Fechar modal ao clicar no botão de fechar
+    $('.close-button').on('click', function() {
+        $('#add-book-modal').hide();
+    });
+
+    // Submissão do formulário de adicionar livro
+    $('#add-book-form').on('submit', function(e) {
+        e.preventDefault();
+
+        // Mostrar indicador de carregamento
+        $('#loading-indicator').show();
+
+        var bookData = {
+            title: $('#book-title').val(),
+            url: $('#book-url').val(),
+            image: $('#book-image').val()
+        };
+
+        $.ajax({
+            url: apiUrl + '/add-book',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(bookData),
+            success: function(response) {
+                console.log('Book added:', response);
+                $('#loading-indicator').hide();
+                $('#add-book-modal').hide();
+                fetchBooks(currentPage); // Recarregar a lista de livros
+            },
+            error: function(error) {
+                console.error('Error adding book:', error);
+                $('#loading-indicator').hide();
+                alert('Erro ao adicionar livro. Verifique se todos os campos estão preenchidos corretamente.');
+            }
+        });
+    });
+
     // Inicializar com os livros recentes
     fetchRecentBooks();
 });
