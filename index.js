@@ -1,17 +1,12 @@
-/**
- * FrontEndeiros 1.0
- * /index.js - Aplicativo principal
- * By Luferat
- * MIT License 2023 
- **/
-
 $(document).ready(function() {
     // Inicializa o aplicativo
     myApp();
 
     // Toggle do menu lateral em telas menores
     $('#menu-toggle').on('click', function() {
-        $('#mobile-menu').toggleClass('active');
+        if (window.innerWidth <= 768) { // Verifica se a largura da tela é menor ou igual a 768px
+            $('#mobile-menu').toggleClass('active');
+        }
     });
 
     // Fechar o menu quando um link é clicado
@@ -21,8 +16,10 @@ $(document).ready(function() {
 
     // Fechar o menu ao clicar fora dele
     $(document).on('click', function(e) {
-        if (!$(e.target).closest('#menu-toggle, #mobile-menu').length) {
-            $('#mobile-menu').removeClass('active');
+        if (window.innerWidth <= 768) { // Aplica apenas em telas menores ou iguais a 768px
+            if (!$(e.target).closest('#menu-toggle, #mobile-menu').length) {
+                $('#mobile-menu').removeClass('active');
+            }
         }
     });
 });
