@@ -5,33 +5,30 @@
  * MIT License 2023 
  **/
 
-// Chama aplicativo principal.
 $(document).ready(function() {
     // Inicializa o aplicativo
     myApp();
 
-    // Toggle do menu em telas menores
+    // Toggle do menu lateral em telas menores
     $('#menu-toggle').on('click', function() {
         $('#mobile-menu').toggleClass('active');
-
-        // Verificar se o menu está visível
-        if ($('#mobile-menu').hasClass('active')) {
-            $('#mobile-menu').css('display', 'block');
-        } else {
-            $('#mobile-menu').css('display', 'none');
-        }
     });
 
     // Fechar o menu quando um link é clicado
     $('#mobile-menu a').on('click', function() {
         $('#mobile-menu').removeClass('active');
-        $('#mobile-menu').css('display', 'none');
+    });
+
+    // Fechar o menu ao clicar fora dele
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('#menu-toggle, #mobile-menu').length) {
+            $('#mobile-menu').removeClass('active');
+        }
     });
 });
 
 // Aplicativo principal.
 function myApp() {
-
     // Aceite de cookies.
     if (cookie.get('acceptCookies') == 'on')
         $('#aboutCookies').hide()
@@ -55,17 +52,13 @@ function myApp() {
 
 // Processa rotas.
 function routerLink() {
-
-    // Obtém e sanitiza a rota do elemento clicado.
     var href = $(this).attr('href').trim().toLowerCase()
 
-    // Âncora para o topo da página.
     if (href == '#top') {
         window.scrollTo(0, 0)
         return false
     }
 
-    // Links externos.
     if (
         href.substring(0, 7) == 'http://' ||
         href.substring(0, 8) == 'https://' ||
@@ -74,22 +67,18 @@ function routerLink() {
     )
         return true
 
-    // Carrega a rota na SPA.
     loadpage(href)
     return false
 }
 
 // Carrega a página da rota na SPA.
 function loadpage(page, updateURL = true) {
-
-    // Caminhos dos componentes da página à partir da rota.
     const path = {
         html: `pages/${page}/index.html`,
         css: `pages/${page}/index.css`,
         js: `pages/${page}/index.js`
     }
 
-    // Obtém componentes HTML, CSS e JS da página.
     $.get(path.html)
         .done((data) => {
             if (data.trim().substring(0, 9) != '<article>')
@@ -104,10 +93,7 @@ function loadpage(page, updateURL = true) {
             loadpage('e404', false)
         })
 
-    // Rola a tela para o início da página.
     window.scrollTo(0, 0);
-
-    // Atualiza URL da página com o endereço da rota.
     if (updateURL) window.history.pushState({home}, '', page);
 }
 
@@ -121,25 +107,20 @@ function changeTitle(title = '') {
 
 // Calcula a idade com base na data.
 function getAge(sysDate) {
-    // Obtendo partes da data atual.
     const today = new Date()
     const tYear = today.getFullYear()
     const tMonth = today.getMonth() + 1
     const tDay = today.getDate()
 
-    // Obtendo partes da data original.
     const parts = sysDate.split('-')
     const pYear = parts[0]
     const pMonth = parts[1]
     const pDay = parts[2]
 
-    // Calcula a idade pelo ano.
     var age = tYear - pYear
 
-    // Verificar o mês e o dia.
     if (pMonth > tMonth || pMonth == tMonth && pDay > tDay) age--
 
-    // Retorna a idade.
     return age
 }
 
@@ -156,9 +137,7 @@ function stripHTML(html) {
 }
 
 // Exibe um banner popup.
-// Parâmetros → type: String, text: String, time: Seconds
 function popUp(pData) {
-
     var pStyle = ''
     switch (pData.type) {
         case 'error': pStyle = 'background-color: #f00; color: #fff'; break
@@ -181,7 +160,6 @@ function popUp(pData) {
         </div>
         `)
 
-    // Eventos do banner
     var t = setTimeout(() => {
         $('#popup').remove()
         clearTimeout(t)
@@ -194,21 +172,18 @@ function popUp(pData) {
 
 // Tratamento de datas.
 const myDate = {
-    // System Date para pt-BR Date.
     sysToBr: (systemDate, time = true) => {
         var parts = systemDate.split(' ')[0].split('-')
         var out = `${parts[2]}/${parts[1]}/${parts[0]}`
         if (time) out += ` às ${systemDate.split(' ')[1]}`
         return out
     },
-    // JavaScript para pt-BR date.
     jsToBr: (jsDate, time = true) => {
         var theDate = new Date(jsDate)
         var out = theDate.toLocaleDateString('pt-BR')
         if (time) out += ` às ${theDate.toLocaleTimeString('pt-BR')}`
         return out
     },
-    // Today JavaScript para syste date.
     todayToSys: () => {
         const today = new Date()
         return today.toISOString().replace('T', ' ').split('.')[0]
