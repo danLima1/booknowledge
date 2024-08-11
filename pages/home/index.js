@@ -1,71 +1,13 @@
 $(document).ready(function() {
     const apiUrl = 'https://api-booknowledge.onrender.com';
+    let currentPage = 1;
+    let totalPages = 1;
 
-    // Botão para abrir o modal
-    $('#add-book-button').on('click', function() {
-        $('#add-book-modal').show();
-    });
-
-    // Botão para fechar o modal
-    $('.close-button').on('click', function() {
-        $('#add-book-modal').hide();
-    });
-
-    // Fechar o modal se o usuário clicar fora dele
-    $(window).on('click', function(event) {
-        if ($(event.target).is('#add-book-modal')) {
-            $('#add-book-modal').hide();
-        }
-    });
-
-    // Submissão do formulário para adicionar livro
-    $('#add-book-form').on('submit', function(event) {
-        event.preventDefault();
-
-        const newBook = {
-            title: $('#book-title').val(),
-            url: $('#book-url').val(),
-            image: $('#book-image').val(),
-        };
-
-        // Fechar o modal e mostrar o indicador de carregamento
-        $('#add-book-modal').hide();
-        $('#loading-indicator').show();
-
-        $.ajax({
-            url: apiUrl + '/add-book',
-            method: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(newBook),
-            success: function(response) {
-                alert('Livro adicionado com sucesso!');
-                $('#loading-indicator').hide();
-                location.reload(); // Recarregar a página após adicionar o livro
-            },
-            error: function(error) {
-                console.error('Erro ao adicionar livro:', error);
-                alert('Erro ao adicionar livro. Verifique os dados e tente novamente.');
-                $('#loading-indicator').hide();
-            }
-        });
-    });
-
-    // Verificar se o campo de pesquisa está vazio
-    function checkEmptySearch() {
+    // Função para buscar livros baseados na página atual
+    function fetchBooks(page = 1) {
         var query = $('#search-input').val();
-        if (query === '') {
-            fetchRecentBooks(); // Se estiver vazio, busca os livros recentes
-        }
-    }
-
-    // Chamando a função checkEmptySearch sempre que o campo de pesquisa for modificado
-    $('#search-input').on('input', checkEmptySearch);
-
-    // Função para buscar livros baseados na pesquisa
-    function fetchBooks() {
-        var query = $('#search-input').val();
-        var url = apiUrl + '/search?query=' + encodeURIComponent(query);
-        console.log('Fetching books with query:', query);
+        var url = apiUrl + '/search?query=' + encodeURIComponent(query) + '&page=' + page;
+        console.log('Fetching books with query:', query, 'Page:', page);
 
         $.ajax({
             url: url,
@@ -75,11 +17,11 @@ $(document).ready(function() {
                 var booksContainer = $('#books-container');
                 booksContainer.empty();
 
-                if (data.length === 0) {
+                if (data.books.length === 0) {
                     $('.no-results').show();
                 } else {
                     $('.no-results').hide();
-                    data.forEach(function(book) {
+                    data.books.forEach(function(book) {
                         var row = 
                             '<div class="photo">' +
                                 '<a href="' + book.url + '" class="title">' +
@@ -89,6 +31,15 @@ $(document).ready(function() {
                         booksContainer.append(row);
                     });
                 }
+
+                // Atualizar informações de paginação
+                totalPages = data.total_pages;
+                currentPage = data.current_page;
+                $('#page-info').text('Página ' + currentPage + ' de ' + totalPages);
+
+                // Habilitar/desabilitar botões de navegação
+                $('#prev-page').prop('disabled', currentPage === 1);
+                $('#next-page').prop('disabled', currentPage === totalPages);
             },
             error: function(error) {
                 console.error('Error fetching books:', error);
@@ -96,39 +47,32 @@ $(document).ready(function() {
         });
     }
 
-    // Função para buscar os livros recentes
+    // Função para buscar os livros recentes ao carregar a página
     function fetchRecentBooks() {
-        console.log('Fetching recent books');
-
-        $.ajax({
-            url: apiUrl + '/search',
-            method: 'GET',
-            success: function(data) {
-                console.log('Recent books data received:', data);
-                var booksContainer = $('#books-container');
-                booksContainer.empty();
-
-                if (data.length === 0) {
-                    $('.no-results').show();
-                } else {
-                    $('.no-results').hide();
-                    data.forEach(function(book) {
-                        var row = 
-                            '<div class="photo">' +
-                                '<a href="' + book.url + '" class="title">' +
-                                    '<img src="' + book.image + '" alt="' + book.title + '">' +
-                                '</a>' +
-                            '</div>';
-                        booksContainer.append(row);
-                    });
-                }
-            },
-            error: function(error) {
-                console.error('Error fetching recent books:', error);
-            }
-        });
+        fetchBooks(currentPage);
     }
 
-    // Buscar livros recentes ao carregar a página
+    // Submissão do formulário de pesquisa
+    $('#search-input').on('input', function() {
+        currentPage = 1; // Redefinir para a primeira página na nova pesquisa
+        fetchBooks(currentPage);
+    });
+
+    // Controles de paginação
+    $('#prev-page').on('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            fetchBooks(currentPage);
+        }
+    });
+
+    $('#next-page').on('click', function() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            fetchBooks(currentPage);
+        }
+    });
+
+    // Inicializar com os livros recentes
     fetchRecentBooks();
 });
