@@ -13,11 +13,19 @@ $(document).ready(function() {
     // Toggle do menu em telas menores
     $('#menu-toggle').on('click', function() {
         $('#mobile-menu').toggleClass('active');
+
+        // Verificar se o menu está visível
+        if ($('#mobile-menu').hasClass('active')) {
+            $('#mobile-menu').css('display', 'block');
+        } else {
+            $('#mobile-menu').css('display', 'none');
+        }
     });
 
     // Fechar o menu quando um link é clicado
     $('#mobile-menu a').on('click', function() {
         $('#mobile-menu').removeClass('active');
+        $('#mobile-menu').css('display', 'none');
     });
 });
 
