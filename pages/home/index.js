@@ -1,9 +1,10 @@
 $(document).ready(function() {
+    // Botão de busca
     $('#search-button').on('click', function() {
         fetchBooks();
     });
 
-    // Função para verificar se o campo de pesquisa está vazio
+    // Verificar se o campo de pesquisa está vazio
     function checkEmptySearch() {
         var query = $('#search-input').val();
         if (query === '') {
@@ -11,19 +12,20 @@ $(document).ready(function() {
         }
     }
 
-    // Chamando a função checkEmptySearch() sempre que o campo de pesquisa for modificado
+    // Chamando a função checkEmptySearch sempre que o campo de pesquisa for modificado
     $('#search-input').on('input', checkEmptySearch);
 
+    // Função para buscar livros baseados na pesquisa
     function fetchBooks() {
         var query = $('#search-input').val();
-        var url = 'https://api-booknowledge.onrender.com/search?query=' + query; 
-        console.log('Fetching books with query:', query);  
+        var url = '/search?query=' + encodeURIComponent(query); // Usar a rota local do Flask
+        console.log('Fetching books with query:', query);
 
         $.ajax({
             url: url,
             method: 'GET',
             success: function(data) {
-                console.log('Data received:', data); 
+                console.log('Data received:', data);
                 var booksContainer = $('#books-container');
                 booksContainer.empty();
 
@@ -51,7 +53,7 @@ $(document).ready(function() {
 
     // Função para buscar os livros recentes
     function fetchRecentBooks() {
-        var url = 'https://api-booknowledge.onrender.com/search'; // Ajuste a URL do backend para buscar livros recentes
+        var url = '/search'; // Usar a rota local do Flask para buscar livros recentes
         console.log('Fetching recent books');
 
         $.ajax({
@@ -71,7 +73,8 @@ $(document).ready(function() {
                             '<div class="photo">' +
                                 '<a href="' + book.url + '" class="title">' +
                                     '<img src="' + book.image + '" alt="' + book.title + '">' +
-                                '</a>' 
+                                '</a>' +
+                                '<span class="title-text">' + book.title + '</span>' +
                             '</div>';
                         booksContainer.append(row);
                     });
@@ -83,6 +86,6 @@ $(document).ready(function() {
         });
     }
 
-    // Fetch initial books on page load
-    fetchRecentBooks(); // Carrega os livros recentes ao carregar a página
+    // Buscar livros recentes ao carregar a página
+    fetchRecentBooks();
 });
