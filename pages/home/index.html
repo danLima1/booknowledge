@@ -17,6 +17,13 @@
             </tbody>
         </table>
         <div class="no-results" style="display: none;">Nenhum livro encontrado</div>
+
+        <!-- Controles de Paginação -->
+        <div id="pagination-controls" style="display: flex; justify-content: center; margin-top: 20px;">
+            <button id="prev-page" disabled>Anterior</button>
+            <span id="page-info" style="margin: 0 15px;">Página 1 de 1</span>
+            <button id="next-page" disabled>Próximo</button>
+        </div>
     </div>
 </article>
 
@@ -46,98 +53,119 @@
     <div class="spinner"></div>
 </div>
 
+
 <style>
-    /* Estilo básico para o modal */
-    .modal {
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-    }
+   /* Estilo básico para o modal */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
 
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 500px;
-        border-radius: 5px;
-    }
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
 
-    .close-button {
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-    }
+.close-button {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    .close-button:hover,
-    .close-button:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-    /* Estilo para o formulário dentro do modal */
-    #add-book-form {
-        display: flex;
-        flex-direction: column;
-    }
+/* Estilo para o formulário dentro do modal */
+#add-book-form {
+    display: flex;
+    flex-direction: column;
+}
 
-    #add-book-form label {
-        margin-top: 10px;
-    }
+#add-book-form label {
+    margin-top: 10px;
+}
 
-    #add-book-form input {
-        padding: 8px;
-        margin-top: 5px;
-    }
+#add-book-form input {
+    padding: 8px;
+    margin-top: 5px;
+}
 
-    #add-book-form button {
-        margin-top: 15px;
-        padding: 10px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+#add-book-form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    #add-book-form button:hover {
-        background-color: #45a049;
-    }
+#add-book-form button:hover {
+    background-color: #45a049;
+}
 
-    /* Estilo para o indicador de carregamento */
-    #loading-indicator {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: white;
-        padding: 20px;
-        border-radius: 10px;
-        z-index: 1000;
-    }
+/* Estilo para o indicador de carregamento */
+#loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
 
-    .spinner {
-        margin: 10px auto;
-        border: 4px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top: 4px solid white;
-        width: 40px;
-        height: 40px;
-        animation: spin 1s linear infinite;
-    }
+.spinner {
+    margin: 10px auto;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid white;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
 
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos de paginação */
+#pagination-controls button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#pagination-controls span {
+    display: flex;
+    align-items: center;
+}
 </style>
