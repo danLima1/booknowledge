@@ -2,18 +2,12 @@
 <html lang="pt-br">
 
 <head>
-    <!--
-        Caminho base.
-        Define o caminho absoluto dos documentos e links do site.
-        Este camiho será alterado conforme a plataforma de hospedagem.
-    -->
-   
     <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site para falicitar o conhecimento e entretenimento">
-    <meta name="author" descrition="André Luferat &lt;andre@luferat.net&gt;">
-    <meta name="keywords" description="JavaScript, HTML5, CSS3, semântica, mobile-first, responsividade, api, rest">
+    <meta name="description" content="Site para facilitar o conhecimento e entretenimento">
+    <meta name="author" content="André Luferat &lt;andre@luferat.net&gt;">
+    <meta name="keywords" content="JavaScript, HTML5, CSS3, semântica, mobile-first, responsividade, api, rest">
     <link rel="apple-touch-icon" sizes="180x180" href="https://img.freepik.com/vetores-premium/robo-bonito-icon-ilustracao-conceito-de-icone-de-robo-de-tecnologia-isolado-estilo-cartoon-plana_138676-1220.jpg">
     <link rel="icon" type="image/png" sizes="32x32" href="https://img.freepik.com/vetores-premium/robo-bonito-icon-ilustracao-conceito-de-icone-de-robo-de-tecnologia-isolado-estilo-cartoon-plana_138676-1220.jpg">
     <link rel="icon" type="image/png" sizes="16x16" href="https://img.freepik.com/vetores-premium/robo-bonito-icon-ilustracao-conceito-de-icone-de-robo-de-tecnologia-isolado-estilo-cartoon-plana_138676-1220.jpg">
@@ -32,27 +26,32 @@
 
 <body>
     <header>
-    <div class="pesq">
-        <li> <a href="home" class="blue">alguns Livros</a></li>
-        <li><a href="cursos" class="green">alguns Cursos</a></li>
+        <div class="pesq">
+            <li><a href="home" class="blue">alguns Livros</a></li>
+            <li><a href="cursos" class="green">alguns Cursos</a></li>
+        </div>
+        <div class="navbar">
+            <!-- Botão de menu para telas menores -->
+            <span id="menu-toggle"><i class="fa-solid fa-bars"></i></span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="login"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    <!-- Menu expansível (oculto por padrão) -->
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <li><a href="home">alguns Livros</a></li>
+            <li><a href="cursos">alguns Cursos</a></li>
+            <!-- Adicione outras opções de menu aqui -->
+        </ul>
     </div>
-    <div class="navbar">
-        <span><i class="fa-solid fa-bars"></i></span>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <a href="login"><i class="fa-solid fa-user"></i></a>
-    </div>
-</header>
 
-<main></main>
-    <div class="wrap">
+    <main></main>
+    <div class="wrap"></div>
 
-        
-    </div>
-
-
-<script defer src="index.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script defer src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
