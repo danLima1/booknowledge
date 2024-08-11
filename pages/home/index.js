@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    const apiUrl = 'https://api-booknowledge.onrender.com/search';
+
     // Botão de busca
     $('#search-button').on('click', function() {
         fetchBooks();
@@ -18,7 +20,7 @@ $(document).ready(function() {
     // Função para buscar livros baseados na pesquisa
     function fetchBooks() {
         var query = $('#search-input').val();
-        var url = '/search?query=' + encodeURIComponent(query); // Usar a rota local do Flask
+        var url = apiUrl + '?query=' + encodeURIComponent(query); // Usar a URL completa da API
         console.log('Fetching books with query:', query);
 
         $.ajax({
@@ -39,7 +41,6 @@ $(document).ready(function() {
                                 '<a href="' + book.url + '" class="title">' +
                                     '<img src="' + book.image + '" alt="' + book.title + '">' +
                                 '</a>' +
-                                '<span class="title-text">' + book.title + '</span>' +
                             '</div>';
                         booksContainer.append(row);
                     });
@@ -53,11 +54,10 @@ $(document).ready(function() {
 
     // Função para buscar os livros recentes
     function fetchRecentBooks() {
-        var url = 'https://api-booknowledge.onrender.com/search'; // Usar a rota local do Flask para buscar livros recentes
         console.log('Fetching recent books');
 
         $.ajax({
-            url: url,
+            url: apiUrl, // Usar a URL completa da API
             method: 'GET',
             success: function(data) {
                 console.log('Recent books data received:', data);
@@ -74,7 +74,6 @@ $(document).ready(function() {
                                 '<a href="' + book.url + '" class="title">' +
                                     '<img src="' + book.image + '" alt="' + book.title + '">' +
                                 '</a>' +
-                                '<span class="title-text">' + book.title + '</span>' +
                             '</div>';
                         booksContainer.append(row);
                     });
