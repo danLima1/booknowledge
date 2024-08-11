@@ -291,39 +291,6 @@
      
      }
  }
-/* Estilos para o menu expansível em telas menores */
-.mobile-menu {
-    display: none; /* Oculto por padrão */
-    position: absolute;
-    top: 60px; /* Ajuste a posição conforme necessário */
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.mobile-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mobile-menu ul li {
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.mobile-menu ul li a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-}
-
-/* Mostra o menu quando ativo */
-.mobile-menu.active {
-    display: block;
-}
 
 /* Estilo para o menu lateral */
 .mobile-menu {
@@ -366,14 +333,57 @@
     background-color: #575757;
 }
 
-
-/* Exibe o botão de menu em telas menores */
+/* Estilo para o menu lateral, visível apenas em telas menores */
 @media (max-width: 768px) {
-    #menu-toggle {
-        display: inline-block;
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -250px; /* Inicia fora da tela */
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        color: white;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        padding-top: 60px;
     }
-    
-    .pesq {
-        display: none; /* Oculta o menu de navegação principal em telas menores */
+
+    .mobile-menu.active {
+        right: 0; /* Mostra o menu na tela */
+    }
+
+    .mobile-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu ul li {
+        margin: 10px 0;
+    }
+
+    .mobile-menu ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+
+    .mobile-menu ul li a:hover {
+        background-color: #575757;
+    }
+}
+
+/* Esconde o botão de menu em telas maiores */
+@media (min-width: 769px) {
+    #menu-toggle {
+        display: none;
+    }
+
+    /* O menu lateral não deve aparecer em telas maiores */
+    .mobile-menu {
+        display: none;
     }
 }
